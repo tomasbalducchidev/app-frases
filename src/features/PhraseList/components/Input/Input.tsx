@@ -15,6 +15,7 @@ const Input: FC<Props> = ({ value, onChange, placeholder }) => {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      maxLength={120}
     />
   );
 };

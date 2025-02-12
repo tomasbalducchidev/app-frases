@@ -4,14 +4,14 @@ import Button from "../Button/Button";
 
 interface Props {
   phrase: string;
-  onDelete: () => void;
+  deletePhrase: () => void;
 }
 
-const Card: FC<Props> = ({ phrase, onDelete }) => {
+const Card: FC<Props> = ({ phrase, deletePhrase }) => {
   return (
     <div className={styles.card}>
-      <p>{phrase}</p>
-      <Button onClick={onDelete}>❌</Button>
+      <p className={styles.text}>{phrase}</p>
+      <Button handleClick={deletePhrase}>Borrar</Button>
     </div>
   );
 };

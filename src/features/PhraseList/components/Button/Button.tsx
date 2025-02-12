@@ -2,13 +2,13 @@ import { FC } from "react";
 import styles from "./Button.module.css";
 
 interface Props {
-  onClick: () => void;
+  handleClick: () => void;
   children: React.ReactNode;
 }
 
-const Button: FC<Props> = ({ onClick, children }) => {
+const Button: FC<Props> = ({ handleClick, children }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} onClick={handleClick}>
       {children}
     </button>
   );

@@ -1,34 +1,52 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+import Input from "./components/Input/Input";
+import Button from "./components/Button/Button";
+import Card from "./components/Card/Card";
+import { usePhrases } from "../../hooks/usePhrases";
 import styles from "./PhraseList.module.css";
 
-interface Props {
-  title: string;
-}
+// interface Props {
+//   title: string;
+// }
 
-const PhraseList: FC<Props> = ({ title }) => {
+const PhraseList: FC = () => {
+  const { phrases, addPhrase, deletePhrase, filter, setFilter } = usePhrases();
+  const [newPhrase, setNewPhrase] = useState("");
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>{title}</h1>
-      {/* TODO: form */}
+      <div className={styles.inputsContainer}>
+        <div className={styles.addPhraseContainer}>
+          <Input
+            value={newPhrase}
+            onChange={(e) => setNewPhrase(e.target.value)}
+            placeholder="Agrega una frase"
+          />
+          <Button
+            handleClick={() => {
+              addPhrase(newPhrase);
+              setNewPhrase("");
+            }}
+          >
+            Agregar
+          </Button>
+        </div>
+        <Input
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          placeholder="Filtrar frases"
+        />
+      </div>
+
+      {phrases.length === 0 && <p className={styles.text}>No hay frases</p>}
       <div>
-        <input type="text" />
-        <button>Agregar</button>
-        <input type="text" />
-      </div>
-      {/* TODO: card */}
-      <div className={styles.card}>
-        <p className={styles.text}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea autem,
-          quasi hic doloribus nostrum amet aliquam quos sapiente accusantium
-          recusandae!
-        </p>
-      </div>
-      <div className={styles.card}>
-        <p className={styles.text}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea autem,
-          quasi hic doloribus nostrum amet aliquam quos sapiente accusantium
-          recusandae!
-        </p>
+        {phrases.map((phrase, index) => (
+          <Card
+            key={index}
+            phrase={phrase}
+            deletePhrase={() => deletePhrase(index)}
+          />
+        ))}
       </div>
     </div>
   );
