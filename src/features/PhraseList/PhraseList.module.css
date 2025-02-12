@@ -1,0 +1,31 @@
+.container {
+    padding: 24px;
+    background-color: #00bc7d;
+    border-radius: 8px;
+    width: 40vw;
+    max-width: 90vw;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+    font-weight: 600;
+}
+
+.card {
+    background-color: #e5e7eb;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #000;
+
+}
+  
