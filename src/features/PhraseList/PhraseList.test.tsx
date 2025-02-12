@@ -76,6 +76,4 @@ describe("PhraseList Component", () => {
 
     expect(setFilterMock).toHaveBeenCalledWith("Hola");
   });
-
-  // TODO: test eliminar?
 });
