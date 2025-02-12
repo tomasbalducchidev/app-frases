@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## Run project
+
+```js
+npm run dev
+```
+
 ## Run tests
 
 ```js
