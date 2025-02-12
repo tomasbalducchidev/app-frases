@@ -1,0 +1,19 @@
+.card {
+    background-color: #3A3D4A;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #F8F8F2;
+    overflow-y: auto;
+    word-wrap: break-word;
+    max-height: 80px; 
+}
