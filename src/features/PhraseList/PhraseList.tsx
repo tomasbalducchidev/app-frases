@@ -6,10 +6,6 @@ import Card from "./components/Card/Card";
 import { usePhrases } from "../../hooks/usePhrases";
 import styles from "./PhraseList.module.css";
 
-// interface Props {
-//   title: string;
-// }
-
 const PhraseList: FC = () => {
   const { phrases, addPhrase, deletePhrase, filter, setFilter } = usePhrases();
   const [newPhrase, setNewPhrase] = useState("");
